@@ -25,8 +25,8 @@ fn main() {
     println!("string_h: {}", string_h);
 
     {
-        let helloWorld = String::from("Hello World");
-        println!("This hello world only been used within the scope {}", helloWorld);
+        let hello_world = String::from("Hello World");
+        println!("This hello world only been used within the scope {}", hello_world);
     }
 
     let coffe_a = Coffe{id: 1, count: 10 };
@@ -41,4 +41,21 @@ fn main() {
     println!("coffe_c: {:?}", coffe_c);
     println!("coffe_d: {:?}", coffe_d);
 
+    mutable(&mut String::from("test mutable variable"));
+    immutable(String::from("test immutable variable"));
 }
+
+fn mutable(dummy_variable: &mut String){
+    dummy_variable.push_str(" Some random text"); //this will just append text to the variable pretty neat.
+    //i thought this would have worked:
+    //to make it works you need to work different with with it, you need to set mut on in parameters oh well, but i guess
+    //it would be completely different then, anyway this one works with .push_str
+    //dummy_variable = String::from("This also some random text");
+    println!("dummy_variable: {}", dummy_variable);
+}
+fn immutable(dummy_variable: String){
+    //This will cause an error.
+    //dummy_variable.push_str("Some random text, not very random...");
+    println!("dummy_variable: {}", dummy_variable);
+}
+
