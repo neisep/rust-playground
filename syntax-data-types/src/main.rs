@@ -10,6 +10,7 @@ fn main() {
     println!("Parsed to integer value: {}", parsedInteger);
     println!("Integer to string: {}", parsedInteger.to_string());
 
+    //This is how you assign a floating number in rust
     let floatValue: f32 = 10.5;
     println!("Floor: {}", floatValue.floor());
     println!("Ceiling: {}", floatValue.ceil());
